@@ -25,15 +25,11 @@ function buildColorPool(colors) {
     return shuffle(pool);
 }
 
-function generateCard() {
-    const colorCount = Number(document.querySelector('input[name="colorCount"]:checked').value);
-    const colors = colorCount === 6 ? COLORS_6 : COLORS_4;
+function fillCard(cardEl, colors) {
     const pool = buildColorPool(colors);
-
-    const card = document.getElementById('card');
-    card.innerHTML = '';
-
     const centerColor = colors[Math.floor(Math.random() * colors.length)];
+
+    cardEl.innerHTML = '';
 
     let poolIndex = 0;
     for (let i = 0; i < TOTAL_CELLS; i++) {
@@ -44,11 +40,18 @@ function generateCard() {
         } else {
             cell.classList.add(pool[poolIndex++]);
         }
-        card.appendChild(cell);
+        cardEl.appendChild(cell);
     }
 }
 
-document.getElementById('generateBtn').addEventListener('click', generateCard);
+function generateCards() {
+    const colorCount = Number(document.querySelector('input[name="colorCount"]:checked').value);
+    const colors = colorCount === 6 ? COLORS_6 : COLORS_4;
+    fillCard(document.getElementById('card1'), colors);
+    fillCard(document.getElementById('card2'), colors);
+}
+
+document.getElementById('generateBtn').addEventListener('click', generateCards);
 document.getElementById('printBtn').addEventListener('click', () => window.print());
 
-generateCard();
+generateCards();

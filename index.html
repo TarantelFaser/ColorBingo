@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="controls">
-        <h1>Bingo Card Generator</h1>
+        <h1>Hitster Bingo Card Generator</h1>
         <fieldset>
             <legend>Number of colors</legend>
             <label><input type="radio" name="colorCount" value="4" checked> 4 colors</label>
@@ -17,7 +17,20 @@
         <button id="printBtn" type="button">Print</button>
     </div>
 
-    <div id="card" class="card"></div>
+    <div class="cards">
+        <section class="card-wrapper">
+            <div class="card-inner">
+                <h2>Hitster Bingo</h2>
+                <div id="card1" class="card"></div>
+            </div>
+        </section>
+        <section class="card-wrapper">
+            <div class="card-inner">
+                <h2>Hitster Bingo</h2>
+                <div id="card2" class="card"></div>
+            </div>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>
