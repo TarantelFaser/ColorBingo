@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bingo Card Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="controls">
+        <h1>Bingo Card Generator</h1>
+        <fieldset>
+            <legend>Number of colors</legend>
+            <label><input type="radio" name="colorCount" value="4" checked> 4 colors</label>
+            <label><input type="radio" name="colorCount" value="6"> 6 colors</label>
+        </fieldset>
+        <button id="generateBtn" type="button">Generate</button>
+        <button id="printBtn" type="button">Print</button>
+    </div>
+
+    <div id="card" class="card"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.controls fieldset {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.controls label {
+    cursor: pointer;
+}
+
+.controls button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 4px;
+    width: min(90vw, 90vh, 600px);
+    aspect-ratio: 1 / 1;
+    border: 2px solid #000;
+    padding: 4px;
+    background: #000;
+}
+
+.cell {
+    border: 1px solid #000;
+}
+
+.cell.empty {
+    background: #fff;
+}
+
+.cell.red    { background: #e53935; }
+.cell.blue   { background: #1e88e5; }
+.cell.green  { background: #43a047; }
+.cell.yellow { background: #fdd835; }
+.cell.orange { background: #fb8c00; }
+.cell.purple { background: #8e24aa; }
+
+@media print {
+    @page {
+        margin: 1cm;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .controls {
+        display: none;
+    }
+
+    .card {
+        width: 18cm;
+        height: 18cm;
+        page-break-inside: avoid;
+    }
+
+    .cell {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}
